@@ -9,13 +9,6 @@ search text
 if
     true
 
-annotation
-    intent="smalltalk_my_relative" [weight="0.01", X=x]
-search text
-    \<{MY} {RELATIVE}(\s{x_at_end}|\>)
-if
-    true
-
 #=== AFFIRMATION ===
 
 #=== QUESTION ===
