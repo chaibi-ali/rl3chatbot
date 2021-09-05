@@ -3,7 +3,7 @@ include "../common.rl3"
 annotation
     intent="goodbye" [weight="1"]
 search text
-    ^({GOODBYE}|stop|quit|done|exit)$
+    ^({GOODBYE}|stop|quit|done|exit|bye|ciao)$
 if
     true
 
@@ -25,13 +25,6 @@ annotation
     intent="what_is_your_name" [weight="1"]
 search text
     \<{WHAT_IS_YOUR_NAME}{EOS}
-if
-    true
-
-annotation
-    intent="what_is_rl3" [weight="0.9"]
-search text
-    \<{WHAT_IS} (?i:rl3){EOS}
 if
     true
 
