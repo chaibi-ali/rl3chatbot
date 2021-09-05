@@ -10,44 +10,30 @@ if
 #=== MENTION ===
 
 annotation
-    intent="smalltalk_if" [weight="0.01", X=x]
-search text
-    \<(?i:if)(\s{x_at_end}|\>)
-if
-    true
-
-annotation
-    intent="smalltalk_they_are" [weight="0.01", X=x]
-search text
-    \<(?i:they are)(\s{x_at_end}|\>)
-if
-    true
-
-annotation
     intent="smalltalk_yes" [weight="0.01"]
 search text
-    \<{YES}\>
+    \<{YES|yeah}\>
 if
     true
 
 annotation
     intent="smalltalk_no" [weight="0.01"]
 search text
-    (\<(?i:(nope|nah))\>|^(?i:n+o+){EOS})
+    (\<(?i:(nope|nah|no|not))\>|^(?i:n+o+){EOS})
 if
     true
 
 annotation
     intent="smalltalk_perhaps" [weight="0.01", X=x]
 search text
-    \<(?i:perhaps)(\s{x_at_end}|\>)
+    \<(?i:perhaps|probably|may)(\s{x_at_end}|\>)
 if
     true
 
 annotation
     intent="smalltalk_because" [weight="0.01", X=x]
 search text
-    \<(?i:because)(\s{x_at_end}|\>)
+    \<(?i:because|cause|thats why)(\s{x_at_end}|\>)
 if
     true
 
@@ -61,63 +47,7 @@ if
 annotation
     intent="smalltalk_hello" [weight="0.01"]
 search text
-    \<{HELLO}\>
-if
-    true
-
-annotation
-    intent="smalltalk_friend" [weight="0.01"]
-search text
-    \<{FRIEND}\>
-if
-    true
-
-annotation
-    intent="smalltalk_computer" [weight="0.01"]
-search text
-    \<(?i:computer)
-if
-    true
-
-annotation
-    intent="smalltalk_mother" [weight="0.01"]
-search text
-    \<{MOTHER}\>
-if
-    true
-
-annotation
-    intent="smalltalk_father" [weight="0.01"]
-search text
-    \<{FATHER}\>
-if
-    true
-
-annotation
-    intent="smalltalk_child" [weight="0.01"]
-search text
-    \<(?i:child)
-if
-    true
-
-annotation
-    intent="smalltalk_no_one" [weight="0.01", X=x]
-search text
-    \<{NOBODY}(\s{x_at_end}|\>)
-if
-    true
-
-annotation
-    intent="smalltalk_everyone" [weight="0.01", X=x]
-search text
-    \<{EVERYBODY}(\s{x_at_end}|\>)
-if
-    true
-
-annotation
-    intent="smalltalk_rude_word" [weight="0.01"]
-search text
-    \<{RUDE_WORD}\>
+    \<{HELLO|hi|psst|goodmorning|hey}\>
 if
     true
 
@@ -137,32 +67,5 @@ search text
 if
     true
 
-#=== QUESTION ===
 
-annotation
-    intent="smalltalk_base_question" [weight="0.01"]
-search text
-    (\<{BASE_QUESTION}\s|\?)
-if
-    true
 
-annotation
-    intent="smalltalk_why" [weight="0.01", X=x]
-search text
-    \<(?i:why)(\s{x_at_end}|\>)
-if
-    true
-
-annotation
-    intent="smalltalk_is_it" [weight="0.01", X=x]
-search text
-    \<{IS_IT}(\s{x_at_end}|\>)
-if
-    true
-
-annotation
-    intent="smalltalk_is_there" [weight="0.01", X=x]
-search text
-    \<{IS_THERE}(\s{x_at_end}|\>)
-if
-    true
