@@ -3,7 +3,6 @@
 import os, sys, random, rl3
 from bot.core import Option, Answer
 from bot.base import BaseActions
-from bot.wikipedia import WikipediaActions
 from bot.smalltalk import SmallTalkActions
 
 class Chatbot():
@@ -56,9 +55,8 @@ class Chatbot():
 
         return (Answer(message='ouch...'), context)
 
-class DefaultChatbot(Chatbot, BaseActions, WikipediaActions, SmallTalkActions):
+class DefaultChatbot(Chatbot, BaseActions, SmallTalkActions):
     def __init__(self):
         Chatbot.__init__(self, 'RL3Bot', './intent.rl3c')
         BaseActions.__init__(self)
-        WikipediaActions.__init__(self)
         SmallTalkActions.__init__(self)
