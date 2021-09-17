@@ -5,10 +5,6 @@ include "../../common.rl3"
 annotation
     intent="smalltalk_my" [weight="0.01", X=x]
 search text
-    \<{MY}(\s{x_at_end}|\>)
+    \<{MY|my}(\s{internet}|\>)
 if
     true
-
-#=== AFFIRMATION ===
-
-#=== QUESTION ===
