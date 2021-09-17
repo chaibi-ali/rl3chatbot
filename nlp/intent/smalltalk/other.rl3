@@ -7,7 +7,7 @@ search text
 if
     true
 
-#=== MENTION ===
+
 
 annotation
     intent="smalltalk_yes" [weight="0.01"]
@@ -40,7 +40,7 @@ if
 annotation
     intent="smalltalk_sorry" [weight="0.01"]
 search text
-    \<{SORRY}\>
+    \<{SORRY|sorry}\>
 if
     true
 
@@ -54,16 +54,15 @@ if
 annotation
     intent="smalltalk_different" [weight="0.01"]
 search text
-    \<(?i:different)\>
+    \<(?i:different|not the same thing)\>
 if
     true
 
-#=== AFFIRMATION ===
 
 annotation
     intent="smalltalk_it_is" [weight="0.01", X=x]
 search text
-    \<{IT_IS}(\s{x_at_end}|\>)
+    \<{it is{true|false|not true|not false)\>
 if
     true
 
